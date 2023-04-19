@@ -28,8 +28,22 @@ char *ft_strchr(const char *s, int c)
         }
         s++;
     }
+    //the second while contemplates the possibility of the first character being
+    //the null terminator, in that case the answer should be the pointer that 
+    // coincides with the terminator position.
     if (*s == c) {
         return (char *)s;
     }
     return NULL;
 }
+
+// int main() {
+//    char str[] = "hello world";
+//    char *ptr = ft_strchr(str, 'w');
+//    if (ptr != NULL) {
+//       printf("The character 'w' was found in the string at position %ld.\n", ptr - str);
+//    } else {
+//       printf("The character 'w' was not found in the string.\n");
+//    }
+//    return 0;
+// }
