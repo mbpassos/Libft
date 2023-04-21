@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:53:03 by mbrito-p          #+#    #+#             */
-/*   Updated: 2023/04/14 18:24:11 by mbrito-p         ###   ########.fr       */
+/*   Updated: 2023/04/22 20:31:56 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,6 @@
 //is not overrun.
 
 #include "libft.h"
-
-size_t ft_strlen(const char *s)
-{
-	size_t z;
-
-	z = 0;
-	while(s[z] != '\0')
-	{
-		z++;
-	}	
-	return(z);
-}
 
 size_t ft_strlcpy(char *dst, const char *src, size_t size)
 {
