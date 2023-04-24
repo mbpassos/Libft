@@ -2,40 +2,83 @@
 // of strings obtained by splitting ’s’ using the
 // character ’c’ as a delimiter. The array must end
 // with a NULL pointer
-#include "libft.h"
-
-char	**ft_split(char const *s, char c)
+#include <stdio.h>
+#include <stdlib.h>
+static int  ft_count_words(const char *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
-	char	**final_arr;
-
-	if (!s)
-		return (NULL);
-    final_arr = malloc(sizeof(char *) * (ft_strlen(s) / 2 + 2)); //2 + 2 represents 2 null terminatos and how many parts the string is divided.
-	if (!final_arr)
-		return (NULL);
-	i = 0;
-	k = 0;
-	while (s[i])
-	{
-		j = i;
-        //incremented until it reaches the end of the current substring or the delimiter character c
-		while (s[j] && s[j] != c)
-			j++;
-        //if j > 0 
-		if (j > i)
-		{
-            //The size of the memory block is calculated as j - i + 1, which is the length of the substring plus one extra byte for the null terminator.
-			final_arr[k] = malloc(sizeof(char) * (j - i + 1));
-			if (!final_arr[k])
-                return (NULL);
-            ft_strlcpy(final_arr[k], s + i, j - i + 1);
-            k++;
-		}
-		i = j + (s[j] != '\0');
-	}
-	final_arr[k] = NULL;
-	return (final_arr);
+    int i;
+    int words;
+    i = 0;
+    words = 0;
+    while (s[i])
+    {
+        if (s[i] != c)
+        {
+            words++;
+            while (s[i] && s[i] != c)
+                i++;
+        }
+        else
+            i++;
+    }
+    return (words);
 }
+static char *word_splitter(const char *s, char c)
+{
+    char    *word;
+    int     i;
+    i = 0;
+    while (s[i] && s[i] != c)
+        i++;
+    word = (char *) malloc(sizeof(char) * (i + 1));
+    if (!word)
+        return (NULL);
+    i = 0;
+    while (s[i] && s[i] != c)
+    {
+        word[i] = s[i];
+        i++;
+    }
+    word[i] = '\0';
+    return (word);
+}
+char    **ft_split(char const *s, char c)
+{
+    int     i;
+    int     j;
+    char    **words;
+    i = 0;
+    j = 0;
+    words = (char **) malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+    if (!words || !s)
+        return (NULL);
+    while (s[i])
+    {
+        if (s[i] != c)
+        {
+            words[j] = word_splitter(&s[i], c);
+            while (s[i] && s[i] != c)
+                i++;
+            j++;
+        }
+        else
+            i++;
+    }
+    words[j] = 0;
+    return (words);
+}
+// int main(void)
+// {
+//     char    *str = "Words to be splitted";
+//     char    sep = ' ';
+//     char    **words = ft_split(str, sep);
+//     int i = 0;
+//     printf("Before: %s\nAfter: \n", str);
+//     while (words[i])
+//     {
+//         printf("%s\n", words[i]);
+//         free(words[i]);
+//         i++;
+//     }
+//     free(words);
+// }

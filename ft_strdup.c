@@ -10,7 +10,7 @@ char *ft_strdup(const char *str) {
     if (new_str == NULL)
 		return (0);
     ft_memcpy(new_str, str, len);
-	new_str[len] = '\0';
+	// new_str[len] = '\0'; nao sei se 'e necessario
     return (new_str);//returns a pointer to the new memory, which contains a duplicate of the original string.
 }
 
