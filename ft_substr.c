@@ -4,29 +4,35 @@
 // maximum size ’len’.
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    char *new_str;
-    size_t len_s;
-    size_t final;
-
-    final = 0;
-    len_s =ft_strlen(s);
-    if(!s)
-        return(0);
-    if(start < len_s)
-    {
-        final = len_s - start; //ensure that the substring doesnt exceed the total length of the inital string.
-    }
-    if (final > len)
-    {
-        final = len; //ensures that the function extracts a substring that is no longer than the specified length. 
-    }
-    new_str = (char *)malloc(sizeof(char) * (final + 1)); //does typecasting and adds null to the end because of null terminator
-    if (!new_str)
-        return(0);
-    ft_strlcpy(new_str, s + start, final + 1); //copies the substring from the original safely 
-    return (new_str);
+    char	*substr;
+    
+    // If the input string is NULL, return NULL
+    if (!s)
+        return (NULL);
+    
+    // Ensure that the length of the substring does not exceed the length of the input string
+    if (len > ft_strlen(s) - start)
+        len = ft_strlen(s) - start;
+    
+    // Ensure that the start index is within the bounds of the input string
+    if (start > ft_strlen(s))
+        return (ft_strdup(""));
+    
+    // Allocate memory for the substring
+    substr = malloc(sizeof(char) * (len + 1));
+    if (!substr)
+        return (NULL);
+    
+    // Copy the substring from the input string to the newly allocated memory
+    ft_memcpy(substr, &s[start], len);
+    
+    // Add a null terminator to the end of the substring
+    substr[len] = '\0';
+    
+    // Return the newly allocated substring
+    return (substr);
 }
 
 // int main(void)

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 19:04:57 by mbrito-p          #+#    #+#             */
-/*   Updated: 2023/04/19 12:53:48 by marvin           ###   ########.fr       */
+/*   Updated: 2023/04/28 00:02:41 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,37 +16,37 @@
 // to search in the larger string
 #include "libft.h"
 
-char *ft_strnstr(const char *haystack, const char *needle, size_t len)
+/* This function locates the first occurrence of the null-terminated string needle
+   in the null-terminated string haystack, where not more than len characters are searched. */
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-    size_t	i;
-	size_t	j;
-    //i will keeptrack of iterating haystack, and j to iterate over needle.
-	i = 0;
-    j = 0;
-    //if the big string is null and the len is zero. 
-	if (!haystack && !len)
-		return (0);
-    //checks if needle is an empty string or if needle is equal to haystack
-	if (needle[0] == '\0' || needle == haystack)
+	size_t	h; /* Counter for haystack */
+	size_t	n; /* Counter for needle */
+
+	h = 0; /* Initialize h to 0 */
+	n = 0; /* Initialize n to 0 */
+
+	/* If needle is an empty string, return haystack */
+	if (needle[n] == 0)
 		return ((char *)haystack);
-	while (haystack[i] != '\0')
-	{		
-		while (haystack[i + j] == needle[j] && (i + j) < len)
-		{
-			if (haystack[i + j] == '\0' && needle[j] == '\0')
-                // The & operator returns the memory address of 
-                // the element at index i in the haystack string. 
-                // Since the strnstr function returns a char * pointer, 
-                // we need to typecast the memory address to the correct data type.
-				return ((char *)&haystack[i]);
-			j++;
-		}
-        //quando chega no null terminator da needle retorna o 
-		if (needle[j] == '\0')
-			return ((char *)(haystack + i));
-		i++;
+
+	/* While there are still characters in haystack */
+	while (haystack[h])
+	{
+		/* While there are still characters in both haystack and needle
+		   and the characters match and the remaining length is greater than h+n */
+		while (haystack[h + n] && haystack[h + n] == needle[n] && len > (h + n))
+			n++; /* Move to the next character in needle */
+		
+		/* If needle has been completely matched */
+		if (!(needle[n]))
+			return ((char *)haystack + h); /* Return the pointer to the start of the match */
+		
+		n = 0; /* Reset n to 0 */
+		h++; /* Move to the next character in haystack */
 	}
-	return (0);
+
+	return (0); /* If no match is found, return NULL */
 }
 
 // int main(void)

@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 18:53:27 by mbrito-p          #+#    #+#             */
-/*   Updated: 2023/04/24 22:44:13 by mbrito-p         ###   ########.fr       */
+/*   Updated: 2023/04/27 23:59:01 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // Allocates (with malloc(3)) and returns a string
 // representing the integer received as an argument.
 // Negative numbers must be handled.
-#include <stdlib.h>
-#include <unistd.h>
+#include "libft.h"
 
 static char    *ft_char(char *s, unsigned int number, long int len)
 {
