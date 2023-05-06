@@ -95,6 +95,8 @@ words[j] = 0;
 // return the array of words
 return (words);
 }
+
+
 // int main(void)
 // {
 //     char    *str = "Words to be splitted";
