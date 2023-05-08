@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/26 20:45:36 by mbrito-p          #+#    #+#             */
+/*   Updated: 2023/04/26 20:45:36 by mbrito-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 //memchr is a standard library function in C that searches 
 //a given memory block for the first occurrence of a specified byte.
 //It scans the initial n bytes of the memory area pointed to by s for the first instance of

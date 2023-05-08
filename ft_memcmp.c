@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/26 20:45:48 by mbrito-p          #+#    #+#             */
+/*   Updated: 2023/04/26 20:45:48 by mbrito-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // memcmp, on the other hand, compares two blocks of memory 
 // byte by byte up to a specified number of bytes. It returns 
 // a value indicating whether the blocks of memory are equal, 

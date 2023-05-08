@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/26 20:46:35 by mbrito-p          #+#    #+#             */
+/*   Updated: 2023/04/26 20:46:35 by mbrito-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // The  function compares the two strings s1 and s2.  The locale is not taken into account (for a locale-aware com‐
 // parison, see strcoll(3)).  
 // In the context of the strncmp function, the statement "the locale is not taken into account" means 
