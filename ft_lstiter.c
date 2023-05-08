@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/08 20:26:07 by mbrito-p          #+#    #+#             */
+/*   Updated: 2023/05/08 20:26:07 by mbrito-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 // Iterates the list ’lst’ and applies the function
 // ’f’ on the content of each node.
 // lst: The address of a pointer to a node.

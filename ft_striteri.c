@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/08 20:27:19 by mbrito-p          #+#    #+#             */
+/*   Updated: 2023/05/08 20:27:19 by mbrito-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 // Applies the function ’f’ on each character of
 // the string passed as argument, passing its index
 // as first argument. Each character is passed by

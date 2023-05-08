@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/08 20:25:39 by mbrito-p          #+#    #+#             */
+/*   Updated: 2023/05/08 20:25:39 by mbrito-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 // NAO ENTENDO 100% A LÓGICA DE PRECISAR SER PONTEIRO D PONTEIRO PRA ALTERAR O VALOR DE *lst
 
 // Adds the node ’new’ at the beginning of the list.

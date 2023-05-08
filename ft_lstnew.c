@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/08 20:26:27 by mbrito-p          #+#    #+#             */
+/*   Updated: 2023/05/08 20:26:27 by mbrito-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 // Allocates (with malloc(3)) and returns a new node.
 // The member variable ’content’ is initialized with
 // the value of the parameter ’content’. The variable

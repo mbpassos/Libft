@@ -1,4 +1,15 @@
-// To prevent multiple inclusion, header files typically use header guards or pragma 
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/08 20:24:56 by mbrito-p          #+#    #+#             */
+/*   Updated: 2023/05/08 20:25:03 by mbrito-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // once directives to ensure that the contents of the file are only included once.
 // Header guards use preprocessor directives to check whether a particular symbol has been defined. 
 // If it has not been defined, the header file is included and the symbol is defined. 
