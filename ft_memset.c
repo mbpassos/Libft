@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 17:48:06 by mbrito-p          #+#    #+#             */
-/*   Updated: 2023/04/13 19:53:44 by mbrito-p         ###   ########.fr       */
+/*   Updated: 2023/04/27 21:17:13 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,18 @@
 
 #include "libft.h"
 
-void *ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	char *str;
-	size_t i;
+	/* 
+	** Cast s to an unsigned char pointer to enable byte-level manipulation.
+	** This is done because the memset() function is meant to work with bytes.
+	*/
+	unsigned char	*ptr;
 
-	str = s;
-	i = 0;	
-	if (i < n)
-	{
-		str[i] = c;
-		i++;
-	}
-	return(s);
+	ptr = (unsigned char *)s; // Assign s to the pointer variable 'ptr'
+	while (n-- > 0) // Loop through the memory area 's' for n bytes
+		*(ptr++) = (unsigned char)c; // Set each byte in 's' to 'c'
+	return (s); // Return a pointer to the start of the memory area 's'
 }
 
 // int	main(void)

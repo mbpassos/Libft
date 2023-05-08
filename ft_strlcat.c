@@ -3,56 +3,55 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 20:13:59 by mbrito-p          #+#    #+#             */
-/*   Updated: 2023/04/14 21:03:53 by mbrito-p         ###   ########.fr       */
+/*   Updated: 2023/04/27 23:54:54 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //concatenates strings. Unlike strncat, strlcat() take the full 
 //size of the buffer (not just the length) and guarantee 
 //to NUL-terminate the result
+/*	DESCRIPTION:
+**	strlcat() appends string src to the end of dst.
+**	It will append at most dstsize strlen(dst) - 1 characters.
+**	It will then NUL-terminate, unless dstsize is 0 or
+**	the original dst string was longer than dstsize
+**	(in practice this should not happen as it means that
+**	either dstsize is incorrect or that dst is not a properstring).
+**	If the src and dst strings overlap, the behavior is undefined.
+*/
+
 #include "libft.h"
 
-size_t ft_strlen(const char *s)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-    size_t len = 0;
-    while (s[len])
-        len++;
-    return len;
-}
+	size_t	i;
+	size_t	j;
 
-size_t ft_strlcat(char *dst, const char *src, size_t size)
-{
-    size_t dst_len = ft_strlen(dst);
-    size_t src_len = ft_strlen(src);
-
-	// By checking if dst_len + 1 >= size, we ensure that 
-	// there is enough space to add a null terminator to 
-	// the end of the concatenated string, even if the size of 
-	// the destination buffer is exactly equal to 
-	// the length of the original string. Remeber that 
-	//strlen does not include the null terminator on the count
-    if (dst_len + 1 >= size)
-        return src_len + size;
-
-    size_t i = 0;
-	//src[i] is already checking if the character is a null 
-	//terminator because if it is the null terminator.
-	//If this character is not a null terminator ('\0'), 
-	//then the condition src[i] will evaluate to true 
-	//dst_len + 1 + i represents the total number of 
-	//characters copied so far.
-    while (src[i] != '\0' && dst_len + 1 + i < size)
-    {
-		//this is to place the new concatenation string in the last position
-        dst[dst_len + i] = src[i];
-        i++;
-    }
-    dst[dst_len + i] = '\0';
-
-    return dst_len + src_len;
+	/* If size is less than or equal to the length of dest, the result would be truncated
+    (the process of cutting off a portion of a string).
+	   Thus, we simply return size plus the length of src. */
+	if (size <= ft_strlen(dest))
+	{
+		return (size + ft_strlen(src));
+	}
+	/* Calculate the length of dest */
+	i = ft_strlen(dest);
+	/* Initialize j to 0 */
+	j = 0;
+	/* While src[j] is not the NUL character and the resulting string would not exceed size */
+	while (src[j] != 0 && (i + 1) < size)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	/* Ensure that the resulting string is always NUL-terminated */
+	dest[i] = 0;
+	/* Return the total length of the original string and the appended string */
+	return (i + ft_strlen(&src[j]));
 }
 
 // int main(void)

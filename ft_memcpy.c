@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 20:05:13 by mbrito-p          #+#    #+#             */
-/*   Updated: 2023/04/13 20:38:44 by mbrito-p         ###   ########.fr       */
+/*   Updated: 2023/04/28 00:08:17 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,23 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char	*dest_ptr;
-	unsigned char	*src_ptr;
+	// Declare two char pointers to keep track of the destination and source memory locations
+	char		*pdest;
+	const char	*psrc;
 
-	dest_ptr = (unsigned char *)dest;
-	src_ptr = (unsigned char *)src;
+	// If both the source and destination pointers are NULL, return NULL
+	if (src == NULL && dest == NULL)
+		return (NULL);
+
+	// Assign the destination and source pointers to pdest and psrc, respectively
+	pdest = dest;
+	psrc = src;
+
+	// Loop through the memory locations, copying n bytes of data from source to destination
 	while (n--)
-		*dest_ptr++ = *src_ptr++;
+		*pdest++ = *psrc++;
+
+	// Return the destination pointer
 	return (dest);
 }
 

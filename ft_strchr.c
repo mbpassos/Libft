@@ -10,31 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// The strchr function in C is used to search a given string 
-// (i.e., a sequence of characters) for the first occurrence 
-// of a specified character.The str parameter is a pointer to the string 
-// in which the search is to be performed. 
-// The c parameter is the character that you want to search for in the string.
-// The function returns a pointer to the first occurrence 
-// of the character c in the string str. If the character 
-// is not found, the function returns NULL.
+/* LIBRARY: <string.h>
+** SYNOPSIS: locate character in string (first occurrence)
+** DESCRIPTION: The strchr() function locates the first
+** occurrence of c (converted to a char) in the string pointed to by s.
+** The terminating null character is considered to be part of the string;
+** therefore if c is `\0', the functions locate the terminating `\0'. */
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	while (*s != '\0') {
-        if (*s == c) {
-            return (char *)s;
-        }
-        s++;
-    }
-    //the second while contemplates the possibility of the first character being
-    //the null terminator, in that case the answer should be the pointer that 
-    // coincides with the terminator position.
-    if (*s == c) {
-        return (char *)s;
-    }
-    return NULL;
+	/* While s points to a non-null character and the character c is not equal to s */
+	while (*s && (unsigned char)c != *s)
+		s++; /* Move to the next character in s */
+	
+	/* If the character c is found, return a pointer to that character */
+	if ((unsigned char)c == *s)
+		return ((char *)s);
+	
+	/* Otherwise, return a null pointer */
+	return (0);
 }
 
 // int main() {

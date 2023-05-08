@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 20:43:13 by mbrito-p          #+#    #+#             */
-/*   Updated: 2023/04/18 21:54:53 by mbrito-p         ###   ########.fr       */
+/*   Updated: 2023/04/28 00:07:38 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,31 +18,31 @@
 
 #include "libft.h"
 
+// The function definition takes a void pointer for the destination memory block,
+// a const void pointer for the source memory block, and a size_t n for the number of bytes to copy
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char	*dest_ptr;
-	unsigned char	*src_ptr;
-	//typecasting the pointer to make sure it iterates byte by byte
-	dest_ptr = (unsigned char *) dest;
-	src_ptr = (unsigned char *) src;
-	// check whether the destination pointer comes before the source pointer 
-	// in memory we can safely copy the memory block from source to destination 
-	// without worrying about overwriting any bytes that haven't been copied yet.
-	if (dest_ptr < src_ptr)
+    // If the source and destination memory blocks are the same, there's no need to copy, so just return the destination pointer
+	if (((unsigned char *)dest) == ((unsigned char *)src))
 	{
-		//this conditions ensures that the cycle terminates when n becomes zero
-		while (n--)
-			*dest_ptr++ = *src_ptr++;
+		return (dest);
 	}
+    // If the destination pointer is greater than the source pointer, copy the memory in reverse order
+	if (dest > src)
+	{
+		// Start from the last byte and copy backwards
+		while (n > 0)
+		{
+			((unsigned char *)dest)[n - 1] = ((unsigned char *)src)[n - 1];
+			n--;
+		}
+	}
+    // If the source pointer is greater than the destination pointer, call ft_memcpy() to copy the memory
 	else
-	//in this case, dest is allocated in front of source, so the iteration has to be in
-	// reverse to avoid overwriting
 	{
-		unsigned char *last_dest = dest_ptr + (n - 1);
-		unsigned char *last_src = src_ptr + (n - 1);
-		while (n--)
-			*last_dest-- = *last_src--;
+		ft_memcpy(dest, src, n);
 	}
+    // Return the destination pointer
 	return (dest);
 }
 

@@ -15,60 +15,49 @@
 // from the beginning and the end of the string.
 #include "libft.h"
 
-int	is_char_in_set(char const *set, char c) //check if a given character is in the set string
+/* The ft_isset function checks whether a character c is contained in the set string */
+static int	ft_isset(char c, char const *set)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (set[i])
-	{
-		if (set[i] == c)
+		if (c == set[i++])
 			return (1);
-		i++;
-	}
 	return (0);
 }
 
+/* The ft_strtrim function trims the leading and trailing characters in s1 that are contained in set */
 char	*ft_strtrim(char const *s1, char const *set)
 {
-    char *trimmed;
-	size_t	start;
-	size_t	end;
 	size_t	len;
+	char	*str;
+	size_t	i;
+	size_t	j;
 
-	// If either s1 or set is NULL, return NULL
-	if (!s1 || !set)
+	i = 0;
+	/* If s1 is NULL, return NULL */
+	if (!s1)
 		return (NULL);
-
-	// Get the length of s1
-	len = strlen(s1);
-
-	// Find the start index of the non-trimmed string
-	start = 0;
-	while (start < len && is_char_in_set(set, s1[start]))
-		start++;
-
-	// Find the end index of the non-trimmed string
-	end = len - 1;
-	while (end > start && is_char_in_set(set, s1[end]))
-		end--;
-
-	// Allocate memory for the trimmed string 
-	trimmed = (char *)malloc(sizeof(char) * (end - start + 2));
-	if (!trimmed)
-		return (NULL);
-
-	// Copy the trimmed string into the new buffer 
-    //s1 + start is used to get a pointer to the beginning of the 
-    //trimmed substring in the original string s1.
-	ft_strlcpy(trimmed, s1 + start, end - start + 1);
-
-	// Add the null terminator at the end of the trimmed string
-	trimmed[end - start + 1] = '\0';
-
-	// Return the trimmed string
-	return (trimmed);
+	/* Get the length of s1 */
+	len = ft_strlen(s1);
+	/* Find the index of the first non-set character in s1 */
+	while (ft_isset(s1[i], set))
+		i++;
+	/* If all characters in s1 are set characters, return an empty string */
+	if (i == len)
+		return (ft_strdup(""));
+	/* Find the index of the last non-set character in s1 */
+	j = ft_strlen(s1);
+	while (ft_isset(s1[--j], set));
+	/* Calculate the length of the trimmed string */
+	j = (j + 1) - i;
+	/* Allocate memory for the trimmed string */
+	str = ft_substr(s1, i, j);
+	/* Return the trimmed string */
+	return (str);
 }
+
 
 // int	main(void)
 // {
