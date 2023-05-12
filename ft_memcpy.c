@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 20:05:13 by mbrito-p          #+#    #+#             */
-/*   Updated: 2023/04/28 00:08:17 by marvin           ###   ########.fr       */
+/*   Updated: 2023/05/11 21:26:27 by mbrito-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	// Loop through the memory locations, copying n bytes of data from source to destination
 	while (n--)
-		*pdest++ = *psrc++;
+		*(pdest++) = *(psrc++);
 
 	// Return the destination pointer
 	return (dest);
