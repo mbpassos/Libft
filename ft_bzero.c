@@ -6,7 +6,7 @@
 /*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:38:04 by mbrito-p          #+#    #+#             */
-/*   Updated: 2023/04/13 19:26:23 by mbrito-p         ###   ########.fr       */
+/*   Updated: 2023/05/11 20:18:46 by mbrito-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,13 @@
 
 void ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-	char	*str;
-
-	str = s;
-	i = 0;
-	while (i < n)
-	{
-		str[i] = 0;
-		i++;
-	}
+    unsigned char   *ptr;
+    
+    ptr = (unsigned char *)s;
+    while(n-- > 0)
+    {
+        *(ptr++) = '\0';
+    }
 }
 
 // int main(void) 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:53:03 by mbrito-p          #+#    #+#             */
-/*   Updated: 2023/04/27 23:10:45 by marvin           ###   ########.fr       */
+/*   Updated: 2023/05/11 22:54:19 by mbrito-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,35 +34,52 @@
  * The size of the source string is returned.
  */
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
-{
-	size_t	srcsize;
-	size_t	i;
+// size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+// {
+// 	size_t	srcsize;
+// 	size_t	i;
 
-	/* Get the length of the source string */
-	srcsize = ft_strlen(src);
-	/* Initialize i to -1 
-	In the ft_strlcpy function, i is initialized to -1 
-	to ensure that the first character of src is copied 
-	to the beginning of dst. This is because in C, arrays 
-	are indexed starting from 0, and initializing i to -1 means 
-	that the first iteration of the loop will increment i to 0, 
-	which corresponds to the first character of src. If i were 
-	initialized to 0 instead, the loop would skip the first character 
-	of src and start copying from the second character.	
-	*/
-	i = -1;
-	/* If dstsize is not 0 */
-	if (dstsize != 0)
-	{
-		/* Copy up to dstsize - 1 characters from src to dst the -1 takes the null terminator */
-		while (src[++i] && i < (dstsize - 1))
-			dst[i] = src[i];
-		/* Ensure that the resulting string is always NUL-terminated */
-		dst[i] = '\0' ;
-	}
-	/* Return the size of the source string */
-	return (srcsize);
+// 	/* Get the length of the source string */
+// 	srcsize = ft_strlen(src);
+// 	/* Initialize i to -1 
+// 	In the ft_strlcpy function, i is initialized to -1 
+// 	to ensure that the first character of src is copied 
+// 	to the beginning of dst. This is because in C, arrays 
+// 	are indexed starting from 0, and initializing i to -1 means 
+// 	that the first iteration of the loop will increment i to 0, 
+// 	which corresponds to the first character of src. If i were 
+// 	initialized to 0 instead, the loop would skip the first character 
+// 	of src and start copying from the second character.	
+// 	*/
+// 	i = -1;
+// 	/* If dstsize is not 0 */
+// 	if (dstsize != 0)
+// 	{
+// 		/* Copy up to dstsize - 1 characters from src to dst the -1 takes the null terminator */
+// 		while (src[++i] && i < (dstsize - 1))
+// 			dst[i] = src[i];
+// 		/* Ensure that the resulting string is always NUL-terminated */
+// 		dst[i] = '\0' ;
+// 	}
+// 	/* Return the size of the source string */
+// 	return (srcsize);
+// }
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize){
+    
+    size_t  i;
+
+    i = 0;
+    if (dstsize >  0)
+    {
+        while (src[i] && i < dstsize - 1)
+        {
+            dst[i] = src[i];
+            i++;
+        }
+        dst[i] = '\0';
+    }
+    return (ft_strlen(src));
 }
 
 // int		main(void)

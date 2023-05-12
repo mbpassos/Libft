@@ -10,6 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
+
 NAME = libft.a
 
 PART1 = ft_tolower.c ft_toupper.c ft_isprint.c ft_isascii.c ft_isalnum.c \
@@ -44,7 +45,7 @@ $(NAME): ${OBJS}
 all: ${NAME}
 
 bonus: ${OBJS} ${BONUS_OBJS}
-	ar rcs ${NAME} ${OBJS} ${BONUS_OBJS}
+	ar rcs ${NAME} ${OBJS} ${BONUS_OBJS}3
 
 clean:
 	${RM} ${OBJS} ${BONUS_OBJS}
