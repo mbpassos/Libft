@@ -1,18 +1,12 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/26 20:46:56 by mbrito-p          #+#    #+#             */
-/*   Updated: 2023/04/26 20:46:56 by mbrito-p         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 // Allocates (with malloc(3)) and returns a copy of
 // ’s1’ with the characters specified in ’set’ removed
 // from the beginning and the end of the string.
+// Return value: The trimmed string.
+// NULL if the allocation fails.
+// you need to add 2 at sublen, not 1, to allocate 
+// enough memory for the trimmed string and a null 
+// terminator as well as to ensure proper alignment 
+// of the allocated memory. 
 #include "libft.h"
 
 static int is_set(char c, char const *set)

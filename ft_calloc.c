@@ -34,7 +34,8 @@ void *ft_calloc(size_t nmemb, size_t size)
         p = ptr; // cast the pointer to an unsigned char pointer
         i = 0; // initialize counter
         while (i < total_size) { //set each byte to 0 could ue ft_bzero also
-            p[i] = 0; // set the ith byte to 0
+            *p = 0; // set the ith byte to 0
+            p++;
             i++; // increment the counter
         }
     }

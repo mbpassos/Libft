@@ -23,7 +23,7 @@
 // pointed to by dest will be overwritten by the data from src
 // and source memory locations
 // Return the destination pointer
-#include "include.h"
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

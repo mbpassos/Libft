@@ -49,7 +49,6 @@ int	ft_atoi(const char *str)
 //     char *str6 = "   123";
 //     char *str7 = "  \t  +456";
 //     char *str8 = "789xyz";
-
 //     int num1 = ft_atoi(str1);
 //     int num2 = ft_atoi(str2);
 //     int num3 = ft_atoi(str3);
@@ -58,7 +57,6 @@ int	ft_atoi(const char *str)
 //     int num6 = ft_atoi(str6);
 //     int num7 = ft_atoi(str7);
 //     int num8 = ft_atoi(str8);
-
 //     printf("%s => %d\n", str1, num1);
 //     printf("%s => %d\n", str2, num2);
 //     printf("%s => %d\n", str3, num3);
@@ -67,6 +65,5 @@ int	ft_atoi(const char *str)
 //     printf("%s => %d\n", str6, num6);
 //     printf("%s => %d\n", str7, num7);
 //     printf("%s => %d\n", str8, num8);
-
 //     return (0);
 // }

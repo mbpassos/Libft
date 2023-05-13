@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 20:24:56 by mbrito-p          #+#    #+#             */
-/*   Updated: 2023/05/08 20:25:03 by mbrito-p         ###   ########.fr       */
+/*   Updated: 2023/05/12 23:53:15 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ int	ft_tolower(int c);
 size_t ft_strlcpy(char *dst, const char *src, size_t size);
 size_t ft_strlcat(char *dst, const char *src, size_t size); 
 char *ft_strchr(const char *s, int c);
-char *ft_strnstr(const char *haystack, const char *needle, size_t len);
+char    *ft_strnstr(const char *big, const char *little, size_t len);
 int ft_memcmp(const void *s1, const void *s2, size_t n);
 int ft_atoi(const char *nptr);
 void *ft_calloc(size_t nmemb, size_t size);
-char *ft_strdup(const char *s);
+char    *ft_strdup(const char *s);
 char *ft_substr(char const *s, unsigned int start, size_t len);
 char *ft_strjoin(char const *s1, char const *s2);
 char *ft_strtrim(char const *s1, char const *set);
