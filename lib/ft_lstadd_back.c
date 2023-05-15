@@ -15,6 +15,7 @@
 // a list.
 // new: The address of a pointer to the node to be
 // added to the list.
+//if (!*lst) checks if its empty.
 #include "libft.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)

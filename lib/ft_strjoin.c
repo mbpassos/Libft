@@ -14,6 +14,7 @@
 // string, which is the result of the concatenation
 // of ’s1’ and ’s2’.Return value: The new string.
 // NULL if the allocation fails.
+//final_str + len1 pointer to where it starts counting
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)

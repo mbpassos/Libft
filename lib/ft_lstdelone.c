@@ -19,6 +19,7 @@
 // the content.
 // at the end set lst = NULL to prevent dangling 
 // (invalid or non-existent) pointer.
+// lst = NULL; prevent from using the pointer
 #include "libft.h"
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))

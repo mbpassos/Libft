@@ -13,27 +13,10 @@
 // strlcat() is a function that concatenates two strings. 
 // It takes the full size of the buffer as a parameter (not just the length) 
 // and guarantees to NUL-terminate the result. 
-// The function appends string src to the end of dst, but the number 
-// of characters that it will add is determined by the dstsize 
-// parameter that you pass to the function.
-// strlcat() will always make sure to leave room for a null 
-// character ('\0') at the end of the string it is building. That's why 
-// the comment says that it will add:
-// "at most dstsize - strlen(dst) - 1 characters". strlen(dst) gives 
-// you the length of the first string, and the - 1 is there to 
-// make sure there is room for the null character.
-// The function will append at most dstsize - strlen(dst) - 1 characters. 
-// It will then NUL-terminate the result unless dstsize 
-// is 0 or the original dst string was longer than dstsize. 
-// In practice, this should not happen as it means that either dstsize 
-// is incorrect or that dst is not a proper string. 
-// If the src and dst strings overlap, the behavior is undefined.
-//
 // Parameters:
 //   - dst: the destination string buffer to append to
 //   - src: the source string to append to the destination string
 //   - dstsize: the size of the destination buffer
-//
 // Return value: the total length of the original string and the 
 // appended string that would have been created if enough 
 // :space had been available.

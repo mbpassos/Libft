@@ -19,6 +19,7 @@
 // del: The address of the function used to delete
 // the content of a node if needed.
 // Returns: The new list. NULL if the allocation fails.
+// ft_lstclear(&new_node, del); prevents memory leaks
 #include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))

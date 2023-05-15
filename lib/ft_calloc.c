@@ -6,7 +6,7 @@
 /*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 20:09:18 by mbrito-p          #+#    #+#             */
-/*   Updated: 2023/05/14 20:09:18 by mbrito-p         ###   ########.fr       */
+/*   Updated: 2023/05/15 04:00:29 by mbrito-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 // to free(). If the multiplication of nmemb and size 
 // would result in integer overflow, 
 // then calloc() returns an error.
+//ft_memset(ptr, 0, total_memory_size); avoids unexpected behaviour.
 #include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
