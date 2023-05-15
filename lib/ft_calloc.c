@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 20:09:18 by mbrito-p          #+#    #+#             */
-/*   Updated: 2023/05/15 04:00:29 by mbrito-p         ###   ########.fr       */
+/*   Updated: 2023/05/15 17:09:36 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 // allocates memory for an array of 'nmemb'
 //(a certain int value of) elements of 
 // 'size' bytes each and returns a pointer to the allocated 
-// memory. The memory is set to zero. If nmemb or size 
-// is 0, then calloc() returns either NULL, or a unique 
-// pointer value that can later be successfully passed 
-// to free(). If the multiplication of nmemb and size 
-// would result in integer overflow, 
-// then calloc() returns an error.
+// memory. The memory is set to zero. 
 //ft_memset(ptr, 0, total_memory_size); avoids unexpected behaviour.
 #include "libft.h"
 

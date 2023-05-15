@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 // library stdlib.h
+//ft_isdigit(str[i]) returns boolean if is digit or not.
 #include "libft.h"
 
 int	ft_atoi(const char *str)
