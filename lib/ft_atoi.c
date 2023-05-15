@@ -14,7 +14,7 @@
 //ft_isdigit(str[i]) returns boolean if is digit or not.
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *nptr)
 {
 	int					i;
 	int					sign;
@@ -23,19 +23,19 @@ int	ft_atoi(const char *str)
 	i = 0;
 	sign = 1;
 	result = 0;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+	while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] <= 13))
 		i++;
-	if (str[i] == '-')
+	if (nptr[i] == '-')
 	{
 		sign = -1;
 		i++;
 	}
-	else if (str[i] == '+')
+	else if (nptr[i] == '+')
 		i++;
-	while (ft_isdigit(str[i]))
+	while (ft_isdigit(nptr[i]))
 	{
 		result *= 10;
-		result += str[i] - '0';
+		result += nptr[i] - '0';
 		i++;
 	}
 	return (result * sign);
