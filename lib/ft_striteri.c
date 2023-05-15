@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/15 03:00:55 by mbrito-p          #+#    #+#             */
+/*   Updated: 2023/05/15 03:00:55 by mbrito-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // Applies the function ’f’ ON each character of
 // the string passed as argument, passing its index
 // as first argument. Each character is passed by
@@ -15,11 +27,11 @@
 // the original pointer or the original string.
 #include "libft.h"
 
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-    unsigned int i;
-    
-    i = 0;
+	unsigned int	i;
+
+	i = 0;
 	if (!s || !f)
 		return ;
 	while (s[i])

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/15 02:07:09 by mbrito-p          #+#    #+#             */
+/*   Updated: 2023/05/15 02:07:09 by mbrito-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // Allocates (with malloc(3)) and returns a substring
 // from the string ’s’.
 // The substring begins at index ’start’ and is of
@@ -11,31 +23,30 @@
 // starting from the index start.
 #include "libft.h"
 
-
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    char	*substr;
-    size_t  s_size;
-    
-    if (!s)
-        return (NULL);
-    s_size = ft_strlen(s);
-    if (s_size < start)
-    {
-        substr = (char *)malloc(sizeof(char) * 1);
-        if (!substr)
-            return (NULL);
-        substr[0] = '\0';
-        return (substr);    
-    }
-    if (len > s_size - start)
-        len = s_size - start;
-    substr = (char *)malloc(sizeof(char) * (len + 1));
-    if (!substr)
-        return (NULL);
-    ft_memcpy(substr, s + start, len);
-    substr[len] = '\0';
-    return (substr);
+	char	*substr;
+	size_t	s_size;
+
+	if (!s)
+		return (NULL);
+	s_size = ft_strlen(s);
+	if (s_size < start)
+	{
+		substr = (char *)malloc(sizeof(char) * 1);
+		if (!substr)
+			return (NULL);
+		substr[0] = '\0';
+		return (substr);
+	}
+	if (len > s_size - start)
+		len = s_size - start;
+	substr = (char *)malloc(sizeof(char) * (len + 1));
+	if (!substr)
+		return (NULL);
+	ft_memcpy(substr, s + start, len);
+	substr[len] = '\0';
+	return (substr);
 }
 
 // int main(void)

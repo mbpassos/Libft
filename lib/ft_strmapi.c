@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/15 01:05:20 by mbrito-p          #+#    #+#             */
+/*   Updated: 2023/05/15 01:05:20 by mbrito-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // Applies the function ’f’ TO each character of the
 // string ’s’, and passing its index as first argument
 // to create a new string (with malloc(3)) resulting
@@ -8,36 +20,38 @@
 
 #include "libft.h"
 
-char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    size_t	i;
-    size_t  len;
-    char    *str_res;
+	size_t	i;
+	size_t	len;
+	char	*str_res;
 
-    i = 0;
-    len = ft_strlen(s);
-    str_res = (char *)malloc(sizeof(char) * (len + 1));
-    if(!str_res)
-        return (NULL);
-    while (i < len)
-    {
-        str_res[i] = f(i, s[i]);
-        i++;
-    }
-    str_res[i] = '\0';
-    return (str_res);
+	i = 0;
+	len = ft_strlen(s);
+	str_res = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str_res)
+		return (NULL);
+	while (i < len)
+	{
+		str_res[i] = f(i, s[i]);
+		i++;
+	}
+	str_res[i] = '\0';
+	return (str_res);
 }
 
-// int main()
+// char	ft_transform_2(unsigned int i, char c)
 // {
-//     char str[] = "hello world";
-//     char *new_str;
-//     // apply the double_char function to each character in str
-//     new_str = ft_strmapi(str, double_char);
-//     // print the original and new strings
-//     printf("Original string: %s\n", str);
-//     printf("New string: %s\n", new_str);
-//     // free the memory allocated for new_str
-//     free(new_str);
-//     return 0;
+// 	if (i % 2 == 0)
+// 		return (ft_toupper(c));
+// 	else
+// 		return (ft_tolower(c));
+// }
+// int main(void)
+// {
+// 	char *str = "hello world";
+// 	char *transformed_str = ft_strmapi(str, ft_transform_2);
+// 	printf("%s\n", transformed_str);
+// 	free(transformed_str);
+// 	return (0);
 // }

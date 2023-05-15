@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/14 23:09:15 by mbrito-p          #+#    #+#             */
+/*   Updated: 2023/05/14 23:09:15 by mbrito-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // Outputs the string ’s’ to the given file descriptor
 // followed by a newline.
 #include "libft.h"
@@ -8,23 +20,12 @@ void	ft_putendl_fd(char *s, int fd)
 
 	len = ft_strlen(s);
 	write(fd, s, len);
-	write(fd, "\n", 1); 
+	write(fd, "\n", 1);
 }
 
-// #include <fcntl.h> // for open function
-// int main(void)
+// int	main(void)
 // {
-//     int fd;
-//     char *str;
-
-//     str = "Hello, world!";
-//     fd = open("output.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644); // open file in write mode, create if it doesn't exist, truncate if it does
-//     if (fd < 0) // check if file opened successfully
-//     {
-//         ft_putstr_fd("Error: could not open file\n", 2); // write error message to standard error
-//         return (1); // exit with error code
-//     }
-//     ft_putendl_fd(str, fd); // write string to file with newline
-//     close(fd); // close file descriptor
-//     return (0); // exit with success code
+//     char *str = "Hello, world!";
+//     ft_putendl_fd(str, 1);
+//     return (0);
 // }

@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/14 20:09:18 by mbrito-p          #+#    #+#             */
+/*   Updated: 2023/05/14 20:09:18 by mbrito-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 //#include <stdlib.h>
 // allocates memory for an array of 'nmemb'
@@ -11,17 +22,17 @@
 // then calloc() returns an error.
 #include "libft.h"
 
-void *ft_calloc(size_t nmemb, size_t size) 
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-    size_t  total_memory_size;
-    void    *ptr;
-  
-    total_memory_size = nmemb * size;
-    ptr = malloc(total_memory_size);
-    if (ptr == NULL)
-        return (NULL);
-    ft_memset(ptr, 0, total_memory_size);
-    return (ptr);  
+	size_t	total_memory_size;
+	void	*ptr;
+
+	total_memory_size = nmemb * size;
+	ptr = malloc(total_memory_size);
+	if (ptr == NULL)
+		return (NULL);
+	ft_memset(ptr, 0, total_memory_size);
+	return (ptr);
 }
 
 // int main()  
